@@ -1,0 +1,61 @@
+extends _default
+
+block head
+	- var pageTitle = 'FCC Build a JavaScript Calculator'
+	- var metaDescription = "A JavaScript Calculator built as part of Free Code Camp's 'Advanced Front End Development Projects', using Pug, Sass and Bootstrap 4."	
+	- var companyName = 'Free Code Camp'
+	- var bodyClass = 'calculator'
+	- var googleFonts = 'Share+Tech+Mono'
+	- var jsFile = 'index.js'
+	- var online = true
+	- var mathJS = true
+
+block content
+	.calc
+		.calc__header Electronic Calculator
+		.calc__display
+			.main#d1 0
+			.secondary#d2 0
+		table.calc__buttons
+			tr
+				td
+					button.btn--ac(data-input="ac") AC
+				td
+					button.btn--ce(data-input="ce") CE
+				td
+					button(data-input="/" data-cat="operator") ÷
+				td
+					button(data-input="*" data-cat="operator") x
+			tr
+				td
+					button(data-input="7" data-cat="digit") 7
+				td
+					button(data-input="8" data-cat="digit") 8
+				td
+					button(data-input="9" data-cat="digit") 9
+				td
+					button(data-input="-" data-cat="operator") -
+			tr
+				td
+					button(data-input="4" data-cat="digit") 4
+				td
+					button(data-input="5" data-cat="digit") 5
+				td
+					button(data-input="6" data-cat="digit") 6
+				td
+					button(data-input="+" data-cat="operator") +
+			tr
+				td
+					button(data-input="1" data-cat="digit") 1
+				td
+					button(data-input="2" data-cat="digit") 2
+				td
+					button(data-input="3" data-cat="digit") 3
+				td(rowspan="2" style="vertical-align: top")
+					button(data-input="=") =
+			tr
+				td(colspan="2")
+					button(data-input="0" data-cat="digit") 0
+				td
+					button(data-input="." data-cat="digit") .		
+

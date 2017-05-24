@@ -1,0 +1,67 @@
+@mixin padding($base, $ratio)
+	padding: ($base * $ratio) $base
+
+body
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 100vh
+	font-family: 'Share Tech Mono', monospace
+
+.calc
+	border-radius: 12px
+	background: lightgreen
+	width: 300px
+	@include padding(24px, 17/20)
+	background: linear-gradient(to bottom, #c92c2c 0%, #ec971f 100%)
+
+.calc__header
+	font-weight: bold
+	font-size: 24px
+	letter-spacing: -1px
+	line-height: 1.1
+	color: transparentize(white, 0.1)
+	margin-bottom: 15px
+	text-align: center
+
+.calc__display
+	border: 3px solid darkgrey
+	border-radius: 8px
+	height: 80px
+	width: auto
+	padding: 8px
+	padding-left: 6px
+	background-color: lightgrey
+	text-align: right
+	margin-bottom: 15px
+	.main
+		font-size: 27px
+		line-height: 1.1
+		font-weight: bold
+		margin-bottom: 8px		
+
+.calc__buttons
+	$between-buttons: 10px
+	width: calc(100% + #{2 * $between-buttons})
+	border-collapse: separate
+	border-spacing: $between-buttons
+	position: relative
+	top: -($between-buttons)
+	margin-bottom: -(2 * $between-buttons)
+	margin-left: -($between-buttons)
+	table-layout: fixed
+	td 
+		height: 50px
+	button
+		font-family: 'Share Tech Mono', monospace
+		font-size: 20px
+		border-radius: 8px
+		width: 100%
+		height: 100%
+		background: linear-gradient(to bottom, green 0%, darkgreen 100%)
+		color: white
+		&:focus
+			outline: none
+	.btn--ac,
+	.btn--ce
+		background: black
